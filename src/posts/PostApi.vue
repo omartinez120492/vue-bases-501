@@ -35,12 +35,15 @@ getPosts()
 <template>
     <h5 class="display-5 text-primary">Home Page of Post</h5>
 
-    <button class="btn btn-primary me-3" @click="backPosts">Back</button>
-    <button 
-        class="btn btn-primary" 
-        v-on:click="nextPosts"
-        :disabled="false"
-    >
+    <button class="btn btn-primary me-3" 
+        @click="backPosts"
+        :disabled=" inicio <=0 ? true: false "
+        >
+        Back
+    </button>
+    <button class="btn btn-primary" 
+        v-on:click="nextPosts" 
+        :disabled="fin >= 100 ? true : false">
         Next
     </button>
 
